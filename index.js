@@ -12,12 +12,15 @@ connect.then(() => {
 
     console.log('Connected correctly to mongoDB server');
 
-    const newCampsite = new Campsite({
+    // const newCampsite = new Campsite({
+    //     name: 'React Lake Campground',
+    //     description: 'test'
+    // });
+
+    Campsite.create({
         name: 'React Lake Campground',
         description: 'test'
-    });
-
-    newCampsite.save()
+    })
     .then(campsite => {
         console.log(campsite);
         return Campsite.find();
